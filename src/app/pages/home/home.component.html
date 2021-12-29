@@ -1,0 +1,48 @@
+<div class="m-5">
+
+  <h3>Datos de Usuario</h3>
+  <hr>
+
+  <button class="btn mr-1 btn-outline-success"
+          (click)="nuevo()">
+    Nuevo
+  </button>
+
+  <button class="btn btn-outline-danger"
+          (click)="salir()">
+    Salir
+  </button>
+
+  <hr>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Username</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <th scope="row">{{ usuario.id }}</th>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.apellido }}</td>
+        <td>{{ usuario.username }}</td>
+        <td>
+          <button class="btn-info mr-1"  [routerLink]="['/usuario', usuario.id]">
+            Editar
+          </button>
+
+          <button class="btn-danger mr-1" (click)="borrarUsuario(usuario)" >
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    
+    </tbody>
+  </table>
+
+</div>

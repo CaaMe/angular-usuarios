@@ -1,0 +1,49 @@
+<h2>Nombre del Usuario</h2>
+
+<div class="row text-right">
+  <div class="col text-left">
+    <button class="btn btn-danger" routerLink="/home">
+      Regresar
+    </button>
+  <hr>
+    <form (ngSubmit)="guardar(form)" #form="ngForm" >
+      <div class="form-group" >
+        <label>ID</label>
+        <input type="text" class="form-control" disabled="disabled"
+        [(ngModel)]="usuario.id" name="id">
+      </div>
+
+      <div class="form-group" >
+        <label>Nombre</label>
+        <input type="text" placeholder="Nombre" class="form-control" required
+        [(ngModel)]="usuario.nombre" name="nombre">
+      </div>
+
+      <div class="form-group" >
+        <label>Apellido</label>
+        <input type="text" placeholder="Apellido" class="form-control" 
+        [(ngModel)]="usuario.apellido" name="apellido">
+      </div>
+
+      <div class="form-group" >
+        <label>Username</label>
+        <input type="text" placeholder="Username" class="form-control" required
+        [(ngModel)]="usuario.username" name="username">
+      </div>
+
+      <div class="form-group" >
+        <label>Password</label>
+        <input type="text" placeholder="Password" class="form-control" required
+        [(ngModel)]="usuario.password" name="password">
+      </div>
+
+      <hr>
+      <div class="form-group text-center" >
+        <button type="submit" class="btn btn-primary w-25">
+            Guardar
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
